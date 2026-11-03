@@ -1,0 +1,23 @@
+
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Starting Test Phase"
+
+  build:
+    commands:
+      - echo "Test 1: Checking HTML file"
+      - test -s index.html
+      - grep -qi "<html" index.html
+
+      - echo "Test 2: Checking CSS file"
+      - test -s style.css
+
+      - echo "Test 3: Checking JavaScript file"
+      - test -s script.js
+
+  post_build:
+    commands:
+      - echo "ALL TESTS PASSED SUCCESSFULLY"
