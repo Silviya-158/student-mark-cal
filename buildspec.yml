@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Starting Student Marks Calculator Build"
+
+  pre_build:
+    commands:
+      - echo "Checking project files"
+      - test -f index.html
+      - test -f style.css
+      - test -f script.js
+
+  build:
+    commands:
+      - echo "Running application validation"
+      - echo "All project files verified successfully"
+
+  post_build:
+    commands:
+      - echo "BUILD SUCCESSFUL"
